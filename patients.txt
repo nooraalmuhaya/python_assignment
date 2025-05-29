@@ -1,4 +1,1 @@
-patientID,name,age,address,phonenumber
-1234,fatima,28,riyadh,0551234567
-5678,ahmed,35,kualalumpur,0557654321
-91001,sara,40,london,0551122334
+
