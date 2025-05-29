@@ -1,4 +1,1 @@
-patientID,diagnosis,treatment
-1234,cold,rest and medication
-5678,flu,antiviral medication
-91011,diabetes,insulin therapy
+
