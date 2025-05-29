@@ -3,7 +3,7 @@ from doctor import doctor_menu
 from nurse import nurse_menu
 from patient import patient_menu
 
-def menu():
+def main_menu():
     while True:
         print("\n==Welcome to our Clinic")
         print("1. Receptionist")
@@ -28,6 +28,8 @@ def menu():
         else:
             print("Invalid input. Please enter a number between 1 and 5")
 
+if __name__ == "__main__":
+    main_menu()
 
 
 
