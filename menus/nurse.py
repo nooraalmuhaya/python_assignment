@@ -1,3 +1,5 @@
+from functions import view_doctor_appointments,record_patient_observations,view_doctor_prescriptions,administer_medicine
+
 def nurse_menu():
     while True:
         print("\n--- Nurse Menu ---")
