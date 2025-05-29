@@ -1,4 +1,4 @@
-from functions import register_new_patient,Update_details,schedule_appointment,process_payment
+from menus.functions import register_new_patient,Update_details,schedule_appointment,process_payment
 
 def receptionist_menu():
     while True:
