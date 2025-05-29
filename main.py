@@ -1,3 +1,8 @@
+from Receptionist import receptionist_menu
+from doctor import doctor_menu
+from nurse import nurse_menu
+from patient import patient_menu
+
 def menu():
     while True:
         print("\n==Welcome to our Clinic")
@@ -22,6 +27,7 @@ def menu():
             break
         else:
             print("Invalid input. Please enter a number between 1 and 5")
+
 
 
 
