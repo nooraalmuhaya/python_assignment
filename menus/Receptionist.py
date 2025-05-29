@@ -1,3 +1,4 @@
+from functions import register_new_patient,Update_details,schedule_appointment,process_payment
 
 def receptionist_menu():
     while True:
@@ -15,7 +16,7 @@ def receptionist_menu():
         elif receptionist_choice == '2':
             Update_details()  
         elif receptionist_choice == '3':
-            schedule_appointment
+            schedule_appointment()
         elif receptionist_choice == '4':
             process_payment()
         elif receptionist_choice == '5':
