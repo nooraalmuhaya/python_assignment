@@ -1,4 +1,4 @@
-from menus.functions import view_personal_medical_records,view_upcoming_appointments,update_personal_information,view_billing_details
+from functions import view_personal_medical_records,view_upcoming_appointments,update_personal_information,view_billing_details
 
 def patient_menu():
     while True:

@@ -1,4 +1,4 @@
-from menus.functions import view_patient_records,update_medical_records,view_appointments,block_unblock_availability
+from functions import view_patient_records,update_medical_records,view_appointments,block_unblock_availability
 
 def doctor_menu():
     while True:
