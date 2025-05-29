@@ -14,7 +14,7 @@ def main_menu():
 
         choise = input("Enter your choise(1-4)") 
 
-        if choice== "1":
+        if choise== "1":
             receptionist_menu()
         elif choise == "2":
             doctor_menu()
