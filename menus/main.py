@@ -12,17 +12,17 @@ def main_menu():
         print("4. Patient")
         print("5. Exit")
 
-        choise = input("Enter your choise(1-4)") 
+        choice = input("Enter your choise(1-4)") 
 
-        if choise== "1":
+        if choice== "1":
             receptionist_menu()
-        elif choise == "2":
+        elif choice == "2":
             doctor_menu()
-        elif choise == "3":
+        elif choice == "3":
             nurse_menu()
-        elif choise == "4":
+        elif choice == "4":
             patient_menu()
-        elif choise == "5":
+        elif choice == "5":
             print("Exiting program. Goodbye!")
             break
         else:
