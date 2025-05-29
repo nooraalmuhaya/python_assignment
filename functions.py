@@ -55,3 +55,18 @@ def administer_medicine():
     print("Function: Administer medicine")
 
 ### Patient Functions ###
+
+#1
+def view_personal_medical_records():
+    print("Function: View personal medical records")
+#2
+def view_upcoming_appointments():
+    print("Function: View upcoming appointments")
+
+#3
+def update_personal_information():
+    print("Function: Update personal information")
+
+#4
+def view_billing_details():
+    print("Function: View billing details")
