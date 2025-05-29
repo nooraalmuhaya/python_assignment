@@ -38,4 +38,20 @@ def block_unblock_availability():
 
 ### Nurse Functions ###
 
+#1 
+def view_doctor_appointments():
+    print("Function: View doctor's appointments")
+
+#2
+def record_patient_observations():
+    print("Function: Record patient observations")
+
+#3
+def view_doctor_prescriptions():
+    print("Function: View doctor's prescriptions")
+
+#4
+def administer_medicine():
+    print("Function: Administer medicine")
+
 ### Patient Functions ###
