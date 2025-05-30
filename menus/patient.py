@@ -20,6 +20,6 @@ def patient_menu():
         elif patient_choice == '4':
             view_billing_details()  
         elif patient_choice == '5':
-            break
+            return
         else:
             print("Invalid input. Please enter a number between 1 and 5.")

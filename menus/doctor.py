@@ -20,6 +20,6 @@ def doctor_menu():
         elif doctor_choice == '4':
             block_unblock_availability()
         elif doctor_choice == '5':
-            break
+            return
         else:
             print("Invalid input. Please enter a number between 1 and 5.")

@@ -20,7 +20,7 @@ def receptionist_menu():
         elif receptionist_choice == '4':
             process_payment()
         elif receptionist_choice == '5':
-            break
+            return
         else:
             print("Invalid input. Please enter a number between 1 and 4.")
 

@@ -21,6 +21,6 @@ def nurse_menu():
         elif nurse_choice == '4':
             administer_medicine()  
         elif nurse_choice == '5':
-            break
+            return
         else:
             print("Invalid input. Please enter a number between 1 and 5.")
