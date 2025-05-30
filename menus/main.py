@@ -5,7 +5,7 @@ from patient import patient_menu
 
 def main_menu():
     while True:
-        print("\n==Welcome to our Clinic")
+        print("\n===Welcome to our Clinic===")
         print("1. Receptionist")
         print("2. Doctor")
         print("3. Nurse")
