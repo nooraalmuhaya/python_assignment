@@ -1,4 +1,4 @@
-from Receptionist import receptionist_menu
+from receptionist import receptionist_menu
 from doctor import doctor_menu
 from nurse import nurse_menu
 from patient import patient_menu
