@@ -63,6 +63,7 @@ def view_doctor_appointments():
                 if len(parts) == 3:
                     #take each part in the list and save it in these variables
                     doctor, patient, time = parts 
+                    
                     #print the appointment in a table
                     print(f"| {doctor.strip():15} | {patient.strip():10} | {time.strip():8} |")
                     print("-" * 43)
@@ -73,6 +74,15 @@ def view_doctor_appointments():
     except FileNotFoundError:
         print("The file 'appointment.txt' was not found.")
         #if there is any errors show this error message
+
+
+
+
+
+
+
+
+
 
 
 #2
