@@ -75,16 +75,6 @@ def view_doctor_appointments():
         print("The file 'appointment.txt' was not found.")
         #if there is any errors show this error message
 
-
-
-
-
-
-
-
-
-
-
 #2
 def record_patient_observations():
     print("Function: Record patient observations")
