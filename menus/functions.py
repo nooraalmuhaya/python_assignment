@@ -92,7 +92,27 @@ def administer_medicine():
 
 #1
 def view_personal_medical_records():
-    print("Function: View personal medical records")
+    try:
+        with open("data/medical_records.txt", "r") as file:
+            eachline = file.readlines()
+ 
+            print("Medical Records:\n")
+            print("-" * 43)
+            print(f"| {'Date':15} | {'Time':10} | {'Diagnosis':20} | {'Prescription':20} |")
+            print("-" * 43)
+ 
+            for line in eachline:
+                line = line.strip()
+                parts = line.split(",")
+ 
+                if len(parts) == 4:
+                    date, time, diagnosis, prescription = parts
+                    print(f"| {date.strip():15} | {time.strip():10} | {diagnosis.strip():20} | {prescription.strip():20} |")
+                    print("-" * 43)
+                else:
+                    print("Incorrect format in medical_records.txt.")
+    except FileNotFoundError:
+        print("The file 'medical_records.txt' was not found.")
 #2
 def view_upcoming_appointments():
     print("Function: View upcoming appointments")
