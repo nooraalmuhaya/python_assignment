@@ -42,6 +42,7 @@ def block_unblock_availability():
 def view_doctor_appointments():
     print("Function: View doctor's appointments")
 
+
 #2
 def record_patient_observations():
     print("Function: Record patient observations")
