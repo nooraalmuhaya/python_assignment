@@ -41,6 +41,7 @@ def block_unblock_availability():
 #1 
 def view_doctor_appointments():
     try:
+    #try to run the folowing 
         with open("appointment.txt", "r") as file:
         #read the appointment file so we can read its content using the variable 'file'
             eachline= file.readlines() 
@@ -53,7 +54,9 @@ def view_doctor_appointments():
                 #split each line to 3 parts with the ","
                 print(f"Doctor: {doctor.strip()}, Patient: {patient.strip()}, Time: {time.strip()}")
                 #show the appointment in organized way
-        
+    except FileNotFoundError:
+        print("The file 'appointment.txt' was not found.")
+        #if there is any errors show this error message
 
 
 #2
