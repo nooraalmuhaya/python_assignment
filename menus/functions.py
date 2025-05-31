@@ -40,7 +40,10 @@ def block_unblock_availability():
 
 #1 
 def view_doctor_appointments():
-    print("Function: View doctor's appointments")
+    try:
+        with open("appointment.txt", "r") as file:
+            eachline= file.readlines()
+            print("Doctor Appointments:")
 
 
 #2
