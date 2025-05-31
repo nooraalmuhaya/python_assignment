@@ -50,7 +50,9 @@ def view_doctor_appointments():
             #show a title before displaying appointments
             print("Doctor Appointments:")
 
-            
+            #Print table headers
+            print(f"{'Doctor':15} | {'Patient': 10} | {'Time' :8}")
+            print("-" * 40)
 
             for line in eachline: 
                 line = line.strip() 
