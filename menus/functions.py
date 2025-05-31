@@ -48,19 +48,27 @@ def view_doctor_appointments():
             eachline= file.readlines() 
 
             #show a title before displaying appointments
-            print("Doctor Appointments:")
+            print("Doctor Appointments:\n")
 
             #Print table headers
-            print(f"{'Doctor':15} | {'Patient': 10} | {'Time' :8}")
-            print("-" * 40)
+            print("-" * 43)
+            print(f"| {'Doctor':15} | {'Patient':10} | {'Time':8} |")
+            print("-" * 43)
 
             for line in eachline: 
-                line = line.strip() 
-                # cleaning the lines from any additional spaces and remove the "\n" from the end of the line
-                doctor, patient, time = line.split(",")
-                #split each line to 3 parts with the ","
-                print(f"Doctor: {doctor.strip()}, Patient: {patient.strip()}, Time: {time.strip()}")
-                #show the appointment in organized way
+                line = line.strip()  #cleaning the lines from any additional spaces and remove the "\n" from the end of the line
+                parts = line.split(",")  #split each line by commas and save them in a list
+
+                #check if the line has exactly 3 parts
+                if len(parts) == 3:
+                    #take each part in the list and save it in these variables
+                    doctor, patient, time = parts 
+                    #print the appointment in a table
+                    print(f"| {doctor.strip():15} | {patient.strip():10} | {time.strip():8} |")
+                    print("-" * 43)
+                else:
+                    #skip and warn if there is not 3 parts
+                    print("Skipped a like due to incorrect format.")
 
     except FileNotFoundError:
         print("The file 'appointment.txt' was not found.")
