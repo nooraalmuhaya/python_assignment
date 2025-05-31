@@ -42,7 +42,7 @@ def block_unblock_availability():
 def view_doctor_appointments():
     try:
     #try to run the folowing 
-        with open("appointment.txt", "r") as file:
+        with open("data/appointment.txt", "r") as file:
         #read the appointment file so we can read its content using the variable 'file'
             eachline= file.readlines() 
             #each line in the file will be saved in list called eachline
