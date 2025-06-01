@@ -9,7 +9,7 @@ def register_new_patient():
     contact = input("Enter Contact Number: ")
     address = input("Enter Address: ")
  
-    with open("patients.txt", "a") as file:
+    with open("data/patients.txt", "a") as file:
         file.write(f"{patient_id},{name},{age},{contact},{address}\n")
     print("Patient registered successfully!")
     print("-"*50)
@@ -109,7 +109,7 @@ def record_patient_observations():
     #the observation will be saved in the file in this format
     observation = f"{obs_id}, {patient_id},{blood},{temperature},{date_time}\n"
 
-    with open("nurse_log.txt", "a") as file :
+    with open("data/nurse_log.txt", "a") as file :
             file.write(observation) #record the observation in the file
     
     print("-" * 50)
@@ -195,11 +195,12 @@ def observation_id():
 # this function verify if the patient is exist or no
 def is_existing_patient(patient_id):
     try:
-        with open("patients.txt" , "r") as file:
+        with open("data/patients.txt", "r") as file:
             for line in file:
-                if line.startswith(patient_id+","):
+                # Clean the line, then split, and compare trimmed ID
+                parts = line.strip().split(",")
+                if line.startswith(patient_id+ ","):
                     return True
-                
         return False
     except FileNotFoundError:
         return False
