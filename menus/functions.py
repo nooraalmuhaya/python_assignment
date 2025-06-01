@@ -78,7 +78,33 @@ def view_doctor_appointments():
 
 #2
 def record_patient_observations():
-    print("Function: Record patient observations")
+    print("\n Record Patient Observation")
+    print("-" * 50 ) 
+    #ِِAccept the patient observation and save it in variables
+    name=input("Enter patient name: ")
+    blood=input("Enter blood pressure (e.g , 120/80): ")
+    pulse=input("Enter Pulse rate (bpm): ")
+    temperature=input("Enter temperature (°C): ")
+    
+    #make sure that the data and time format is correct
+    while True:
+        date_time= input("Enter date and time (e.g , 2025-06-01 12:30)")
+        if is_valid_datetime(date_time):
+            break
+        else:
+            print("Invalid format. Please try again (e.g., 2025-06-01 14:30)")
+
+    #the observation will be saved in the file in this format
+    observation=name + "," + blood + "," + pulse + "," + temperature + "," + date_time + "\n"
+
+    try:
+        with open("data/patient.txt", "a") as file :
+            file.write(observation) #record the observation in the file
+        print("-" * 50)
+        print("Observation recorded successfully.\n")#display a message if the records were savedd in the file
+    except:
+        print("Error saving the observation.\n")
+        #if there is any errors show this error message
 
 #3
 def view_doctor_prescriptions():
@@ -124,3 +150,14 @@ def update_personal_information():
 #4
 def view_billing_details():
     print("Function: View billing details")
+
+
+####################### additional functions ###########################
+
+#this function is to verify the date and time format 
+def is_valid_datetime(dt):
+    if len(dt) != 16:
+        return False
+    if dt[4] != '-' or dt[7] != '-' or dt[10] != ' ' or dt[13] != ':' :
+        return False
+    return True
