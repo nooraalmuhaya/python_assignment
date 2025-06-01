@@ -1,4 +1,1 @@
-05 November 2013, 10:34pm, Gastroenteritis, Loperamide 8mg
-15 January 2016, 4:55pm, Fever and flu,  Paracetamol 500g Oxymetazoline
-22 July 2022, 5:20pm, virus infection, Amoxicillin 500mg
-07 February, 9:09pm, Skin Infections, Mupirocin
+1001,fever,panadol, 22-01-2025

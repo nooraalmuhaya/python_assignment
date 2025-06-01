@@ -32,9 +32,29 @@ def process_payment():
 
 #1
 def view_patient_records():
-    print("Function: View patient records")
+    patient_id = get_valid_patient_id()
  
- #2
+    try:
+        with open("data/medical_records.txt", "r") as file:
+            found = False
+            for line in file:
+                data = line.strip().split(",")
+                if patient_id:
+                    print("=== Medical Record ===")
+                    print(f"Patient ID     : {data[0]}")
+                    print(f"Diagnosis      : {data[1]}")
+                    print(f"Prescription   : {data[2]}")
+                    print(f"Date           : {data[3]}")
+                    found = True
+                    break
+            if not found:
+                print("No medical record found for this patient.")
+    except FileNotFoundError:
+        print("Error: medical_records.txt file not found.")
+ 
+
+
+#2
 def update_medical_records():
      print("Function: Update medical records")
 
@@ -134,7 +154,7 @@ def view_personal_medical_records():
  
             print("Medical Records:\n")
             print("-" * 101)
-            print(f"| {'Date':20} | {'Time':8} | {'Diagnosis':20} | {'Prescription':40} |")
+            print(f"| {'Patient ID':20} | {'Diagnosis':8} | {'Prescription':20} | {'Date':40} |")
             print("-" * 101)
  
             for line in eachline:
@@ -149,10 +169,10 @@ def view_personal_medical_records():
                     print("Incorrect format in medical_records.txt.")
     except FileNotFoundError:
         print("The file 'medical_records.txt' was not found.")
+
 #2
 def view_upcoming_appointments():
     print("Function: View upcoming appointments")
-
 #3
 def update_personal_information():
     print("Function: Update personal information")
