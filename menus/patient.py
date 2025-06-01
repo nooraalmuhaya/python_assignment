@@ -12,14 +12,23 @@ def patient_menu():
         patient_choice = input("Enter your choice (1-5): ")
 
         if patient_choice == '1':
+            print("\n" * 50)
             view_personal_medical_records()  
+            input("\nPress Enter to return to the menu...")
         elif patient_choice == '2':
+            print("\n" * 50)
             view_upcoming_appointments()  
+            input("\nPress Enter to return to the menu...")
         elif patient_choice == '3':
+            print("\n" * 50)
             update_personal_information() 
+            input("\nPress Enter to return to the menu...")
         elif patient_choice == '4':
+            print("\n" * 50)
             view_billing_details()  
+            input("\nPress Enter to return to the menu...")
         elif patient_choice == '5':
+            print("\n" * 50)
             return
         else:
             print("Invalid input. Please enter a number between 1 and 5.")

@@ -2,7 +2,17 @@
 
 #1
 def register_new_patient():
-    print("Function: Register new patient")
+    print("\n--- Register New Patient ---")
+    patient_id = input("Enter Patient ID: ")
+    name = input("Enter Name: ")
+    age = input("Enter Age: ")
+    contact = input("Enter Contact Number: ")
+    address = input("Enter Address: ")
+ 
+    with open("patients.txt", "a") as file:
+        file.write(f"{patient_id},{name},{age},{contact},{address}\n")
+    print("Patient registered successfully!")
+    print("-"*50)
 
 #2
 def Update_details():
@@ -80,8 +90,9 @@ def view_doctor_appointments():
 def record_patient_observations():
     print("\n Record Patient Observation")
     print("-" * 50 ) 
+    
     #ِِAccept the patient observation and save it in variables
-    name=input("Enter patient name: ")
+    patient_id = get_valid_patient_id()
     blood=input("Enter blood pressure (e.g , 120/80): ")
     pulse=input("Enter Pulse rate (bpm): ")
     temperature=input("Enter temperature (°C): ")
@@ -91,20 +102,19 @@ def record_patient_observations():
         date_time= input("Enter date and time (e.g , 2025-06-01 12:30)")
         if is_valid_datetime(date_time):
             break
-        else:
-            print("Invalid format. Please try again (e.g., 2025-06-01 14:30)")
+        print("Invalid format. Please try again (e.g., 2025-06-01 14:30)")
+
+    obs_id= observation_id()
 
     #the observation will be saved in the file in this format
-    observation=name + "," + blood + "," + pulse + "," + temperature + "," + date_time + "\n"
+    observation = f"{obs_id}, {patient_id},{blood},{temperature},{date_time}\n"
 
-    try:
-        with open("data/patient.txt", "a") as file :
+    with open("nurse_log.txt", "a") as file :
             file.write(observation) #record the observation in the file
-        print("-" * 50)
-        print("Observation recorded successfully.\n")#display a message if the records were savedd in the file
-    except:
-        print("Error saving the observation.\n")
-        #if there is any errors show this error message
+    
+    print("-" * 50)
+    print("Observation recorded successfully.\n")#display a message if the records were savedd in the file
+
 
 #3
 def view_doctor_prescriptions():
@@ -154,10 +164,59 @@ def view_billing_details():
 
 ####################### additional functions ###########################
 
-#this function is to verify the date and time format 
+# this function is to verify the date and time format 
 def is_valid_datetime(dt):
     if len(dt) != 16:
         return False
     if dt[4] != '-' or dt[7] != '-' or dt[10] != ' ' or dt[13] != ':' :
         return False
     return True
+
+# this function generate a new observation ID
+def observation_id():
+    try:
+        with open("nurse_logs.txt" , "r") as file:
+            observation = file.readlines()
+            if not observation: #if the file is empty
+                return "N001"  
+            last_line= observation[-1].strip() 
+            #get the last line in the file and remove new line or extra spaces
+            last_id= last_line.split(",")[0] 
+            #split the lines by commas and get the first part(the ID)
+            num = int(last_id[1:])
+             #remove the first character and convert the rest to an integer
+            return f"N{str(num+1).zfill(3)}" 
+        #add 1 to the number and return the number with leading zeros
+    except FileNotFoundError: 
+        #if the file doesn't exist yet
+        return "N001" 
+        #start from the first observation ID
+
+# this function verify if the patient is exist or no
+def is_existing_patient(patient_id):
+    try:
+        with open("patients.txt" , "r") as file:
+            for line in file:
+                if line.startswith(patient_id+","):
+                    return True
+                
+        return False
+    except FileNotFoundError:
+        return False
+
+# this function prompt user for a valid patient ID or register a new one if not found
+def get_valid_patient_id():
+    while True:
+        patient_id = input("Enter patient ID: ").strip()
+
+        if is_existing_patient(patient_id):
+            return patient_id
+        
+        print("Patient not found.")
+        choice = input("Do you want to register this patient? (yes/no): " ).lower().strip()
+
+        if choice == "yes":
+            register_new_patient()
+            print("Patient registered. Please re-enter the ID.")
+        else:
+            print("Please enter an existing patient ID. ")

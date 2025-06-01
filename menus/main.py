@@ -15,14 +15,20 @@ def main_menu():
         choice = input("Enter your choise(1-4)") 
 
         if choice== "1":
+            print("\n" * 50)
             receptionist_menu()
+            print("\n" * 10)
         elif choice == "2":
+            print("\n" * 50)
             doctor_menu()
         elif choice == "3":
+            print("\n" * 50)
             nurse_menu()
         elif choice == "4":
+            print("\n" * 50)
             patient_menu()
         elif choice == "5":
+            print("\n" * 50)
             print("Exiting program. Goodbye!")
             break
         else:

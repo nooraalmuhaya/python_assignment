@@ -13,14 +13,28 @@ def nurse_menu():
 
 
         if nurse_choice == '1':
+            print("\n" * 50)
             view_doctor_appointments()
+            input("\nPress Enter to return to the menu...")
+            print("\n" * 50)
+
         elif nurse_choice == '2':
+            print("\n" * 50)
             record_patient_observations()
+            input("\nPress Enter to return to the menu...")
+
         elif nurse_choice == '3':
+            print("\n" * 50)
             view_doctor_prescriptions()  
+            input("\nPress Enter to return to the menu...")
+
         elif nurse_choice == '4':
+            print("\n" * 50)
             administer_medicine()  
+            input("\nPress Enter to return to the menu...")
+            
         elif nurse_choice == '5':
+            print("\n" * 50)
             return
         else:
             print("Invalid input. Please enter a number between 1 and 5.")
