@@ -97,9 +97,9 @@ def view_personal_medical_records():
             eachline = file.readlines()
  
             print("Medical Records:\n")
-            print("-" * 76)
-            print(f"| {'Date':15} | {'Time':10} | {'Diagnosis':20} | {'Prescription':20} |")
-            print("-" * 76)
+            print("-" * 101)
+            print(f"| {'Date':20} | {'Time':8} | {'Diagnosis':20} | {'Prescription':40} |")
+            print("-" * 101)
  
             for line in eachline:
                 line = line.strip()
@@ -107,8 +107,8 @@ def view_personal_medical_records():
  
                 if len(parts) == 4:
                     date, time, diagnosis, prescription = parts
-                    print(f"| {date.strip():15} | {time.strip():10} | {diagnosis.strip():20} | {prescription.strip():20} |")
-                    print("-" * 76)
+                    print(f"| {date.strip():20} | {time.strip():8} | {diagnosis.strip():20} | {prescription.strip():40} |")
+                    print("-" * 101)
                 else:
                     print("Incorrect format in medical_records.txt.")
     except FileNotFoundError:
